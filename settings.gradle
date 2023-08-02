@@ -26,3 +26,5 @@ include ':serializer'
 project(':serializer').projectDir = file('./infrastructure/helpers/serializer')
 include ':async-event-handler'
 project(':async-event-handler').projectDir = file('./infrastructure/entry-points/async-event-handler')
+include ':jpa-repository'
+project(':jpa-repository').projectDir = file('./infrastructure/driven-adapters/jpa-repository')

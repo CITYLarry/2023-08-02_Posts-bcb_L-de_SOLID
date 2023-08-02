@@ -1,17 +1,19 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+	implementation project( ':jpa-repository')
 	implementation project( ':async-event-handler')
 	implementation project( ':serializer')
 	implementation project( ':reactive-web')
 	implementation project( ':async-event-bus')
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '3.0.3'
-	implementation project( ':mongo-repository')
+	//implementation project( ':mongo-repository')
     implementation project(':model')
     implementation project(':usecase')
     implementation 'org.springframework.boot:spring-boot-starter'
-    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')qx
 }
 
 tasks.register('explodedJar', Copy) {

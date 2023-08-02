@@ -18,8 +18,15 @@ spring:
     host: "localhost"
     username: "guest"
     password: "guest"
-    virtual_host: /
+    virtual_host: "/"
     port: 5672
+  datasource:
+    url: "jdbc:mysql://localhost/alpha-bcb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true"
+    username: "root"
+    password: "admin"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+  jpa:
+    databasePlatform: "org.hibernate.dialect.MySQLDialect"
 management:
   endpoints:
     web:

@@ -1,5 +1,6 @@
 package co.com.alpha.bcb.mongo.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory;
 import org.springframework.boot.autoconfigure.mongo.MongoClientSettingsBuilderCustomizer;
@@ -14,15 +15,15 @@ import java.util.List;
 @Configuration
 public class MongoConfig {
 
-    @Bean
-    public MongoDBSecret dbSecret(@Value("${spring.data.mongodb.uri}") String uri) {
+    @Bean("mongoSecret")
+    public MongoDBSecret dbSecretMongo(@Value("${spring.data.mongodb.uri}") String uri) {
         return MongoDBSecret.builder()
                 .uri(uri)
                 .build();
     }
 
     @Bean
-    public ReactiveMongoClientFactory mongoProperties(MongoDBSecret secret) {
+    public ReactiveMongoClientFactory mongoProperties(@Qualifier("mongoSecret") MongoDBSecret secret) {
         MongoProperties properties = new MongoProperties();
         properties.setUri(secret.getUri());
 
