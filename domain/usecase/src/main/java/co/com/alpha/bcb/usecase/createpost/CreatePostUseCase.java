@@ -25,7 +25,7 @@ public class CreatePostUseCase extends UseCaseForCommand<CreatePostCommand> {
         return createPostCommandMono.flatMapIterable(command -> {
             Post post = new Post(PostId.of(command.getPostId()),
                     new Title(command.getTitle()),
-                    new Author(command.getPostId()),
+                    new Author(command.getAuthor()),
                     CommentId.of(command.getCommentId()),
                     new Content(command.getComment()),
                     new Author(command.getCommentAuthor()));

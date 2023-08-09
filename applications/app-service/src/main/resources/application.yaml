@@ -21,7 +21,7 @@ spring:
     virtual_host: "/"
     port: 5672
   datasource:
-    url: "jdbc:mysql://localhost/alpha-bcb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true"
+    url: "jdbc:mysql://localhost:3306/alpha-bcb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true"
     username: "root"
     password: "admin"
     driverClassName: "com.mysql.cj.jdbc.Driver"

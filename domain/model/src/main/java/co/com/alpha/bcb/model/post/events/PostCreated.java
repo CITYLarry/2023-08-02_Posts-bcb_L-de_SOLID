@@ -4,7 +4,7 @@ package co.com.alpha.bcb.model.post.events;
 import co.com.alpha.bcb.model.post.generic.DomainEvent;
 
 public class PostCreated extends DomainEvent {
-    private  String title;
+    private String title;
     private String author;
 
     private String commentId;

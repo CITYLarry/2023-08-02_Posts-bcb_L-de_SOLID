@@ -15,9 +15,9 @@ import java.util.Comparator;
 import java.util.Date;
 
 @Repository
-public class JPARepositoryAdapter
+public class JPARepositoryAdapter implements DomainEventRepository
         //extends AdapterOperations<DomainEvent/* change for domain model */, StoredEvent/* change for adapter model */, String, JPARepository>
-        implements DomainEventRepository
+
 // implements ModelRepository from domain
 {
 
